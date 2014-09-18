@@ -1,48 +1,33 @@
-<widget xmlns = "http://www.w3.org/ns/widgets"
-        xmlns:gap = "http://phonegap.com/ns/1.0"
-        id = "com.nexosapp.ibonoconsumidor">
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns   = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        id          = "com.nexosapp.ibonoconsumidor"
+        versionCode = "10" 
+        version     = "1.0.0" >
 
-<name>Consumidor restaurante</name>
-<description>Consumidor resturante</description>
-<author email="avelez@nexos-software.com.co" href="http://www.nexos-software.com.co/">Consumidor restaurante</author>
+    <!-- versionCode is optional and Android only -->
 
-<icon src="icon.png" />
-<content src="index.html" />
+    <name>IBono Consumidor</name>
 
-<gap:platform name="ios" />
-<gap:platform name="android" />
+    <description>
+        IBono Consumidor. 
+    </description>
 
-<!-- Core plugins -->
-<gap:plugin name="org.apache.cordova.console" />
-<gap:plugin name="org.apache.cordova.device" />
-<gap:plugin name="org.apache.cordova.dialogs" />
-<gap:plugin name="org.apache.cordova.inappbrowser" />
-<gap:plugin name="org.apache.cordova.network-information" />
-<gap:plugin name="org.apache.cordova.splashscreen" />
-
-<preference name="AllowInlineMediaPlayback" value="false" />
-<preference name="AutoHideSplashScreen" value="true" />
-<preference name="BackupWebStorage" value="cloud" />
-<preference name="DisallowOverscroll" value="false" />
-<preference name="EnableViewportScale" value="false" />
-<preference name="FadeSplashScreen" value="true" />
-<preference name="FadeSplashScreenDuration" value=".25" />
-<preference name="KeyboardDisplayRequiresUserAction" value="true" />
-<preference name="MediaPlaybackRequiresUserAction" value="false" />
-<preference name="ShowSplashScreenSpinner" value="true" />
-<preference name="SuppressesIncrementalRendering" value="false" />
-<preference name="TopActivityIndicator" value="gray" />
-<preference name="GapBetweenPages" value="0" />
-<preference name="PageLength" value="0" />
-<preference name="PaginationBreakingMode" value="page" />
-<preference name="PaginationMode" value="unpaginated" />
-
-<access origin="*" />
-
-<feature name="LocalStorage">
-    <param name="ios-package" value="CDVLocalStorage" />
-</feature>
-
+    <author href="https://www.nexos-software.com.co" email="avelez@nexos-software.com.co">
+        IBono Consumidor
+    </author>
+	
+	<icon src="icon.png" />
+	<content src="index.html" />
+	
+	<gap:platform name="ios" />
+	<gap:platform name="android" />
+	
+	<preference name="phonegap-version" value="3.5.0" />
+	
+	<preference name="android-targetSdkVersion" value="16" />
+	
+	<preference name="target-device" value="universal" />
+	<preference name="deployment-target" value="6.0" />
 
 </widget>
-
