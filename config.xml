@@ -1,6 +1,6 @@
 <widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id = "ie.dkit.derek.qr_code">
+        id = "com.nexosapp.ibonoconsumidor">
 
 <name>Consumidor restaurante</name>
 <description>Consumidor resturante</description>
