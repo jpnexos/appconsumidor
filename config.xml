@@ -7,7 +7,6 @@
 <author email="nitroni45@gmail.com" href="http://www.nitroni.com">Consumidor restaurante</author>
 <icon src="icon.png" />
 
-
 <gap:platform name="ios" />
 <gap:platform name="android" />
 
@@ -22,5 +21,8 @@
 <!--note that third party plugins will require an associated .js file to be included in index.html -->
 <!--<gap:plugin name="com.phonegap.plugins.barcodescanner" />
 <access origin="*" />-->
+
+<access origin="*" />
+  
 </widget>
 
