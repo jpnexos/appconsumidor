@@ -35,7 +35,8 @@ if(datosUsuario=="" || datosPassword==""){
    alert("Los campos no pueden estar vacios");
    return false;
 }
-var url=siteCustomer + '/Consumidor/Filter/?usuario='+datosUsuario+'&clave='+datosPassword+'';
+var url = sitePath + '/Proveedor/Filter/?id=' + datosUsuario + '&clave=' + datosPassword + '';	
+//var url=siteCustomer + '/Consumidor/Filter/?usuario='+datosUsuario+'&clave='+datosPassword+'';
 $.ajax({ // ajax call starts
     url: url, // JQuery loads serverside.php 
     type: "GET",
