@@ -487,9 +487,9 @@ function GuardarReserva() {
 
     // Validar Fecha Reserva Ingresada
     var fechaReserva = $("#fechaReserva").val();
-    var horaReserva = $("#horaReserva").val();
+    //var horaReserva = $("#horaReserva").val();
 
-    if (fechaReserva == "" || horaReserva == "") {
+    if (fechaReserva == "" ) {
         alert('La fecha y hora de la reserva no esta seleccionado');
         return false;
     };
@@ -510,7 +510,7 @@ function GuardarReserva() {
     }
 
     // Validar Rango de Hora Reserva
-    var horaReservaTemp = ExtraerHoraVersion2(horaReserva);
+    var horaReservaTemp = ExtraerHora(fechaReservaTemp);
     var horaIni = ExtraerHora(fechasReservasValidas.RanIniDisConsumo);
     var horaFin = ExtraerHora(fechasReservasValidas.RanFinDisConsumo);
 
