@@ -45,19 +45,19 @@ $.ajax({ // ajax call starts
     crossDomain: true,
     success: function (data) // Variable data contains the data we get from serverside
     {
-        alert('sucess');
-        //        datosg = data;
-        //        if (data.NomConsumidor != null) {
+        //alert('sucess');
+                datosg = data;
+                if (data.NomConsumidor != null) {
 
-        //            $('#coreeventos').empty();
-        //            $.mobile.changePage("#menu");
+                    $('#coreeventos').empty();
+                    $.mobile.changePage("#menu");
 
-        //            isAuth = true;          
+                    isAuth = true;          
 
-        //        }
-        //        else {
-        //            alert("El usuario o la clave no son validos");
-        //        }
+                }
+                else {
+                    alert("El usuario o la clave no son validos");
+                }
     },
     error: function (data) {
         alert("Los campos no pueden estar en blanco" + data.responseText);
