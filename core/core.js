@@ -35,7 +35,7 @@ if(datosUsuario=="" || datosPassword==""){
    alert("Los campos no pueden estar vacios");
    return false;
 }
-var url = sitePath + '/Proveedor/Filter/?id=' + datosUsuario + '&clave=' + datosPassword + '';	
+var url = siteCustomer + '/Proveedor/Filter/?id=' + datosUsuario + '&clave=' + datosPassword + '';	
 //var url=siteCustomer + '/Consumidor/Filter/?usuario='+datosUsuario+'&clave='+datosPassword+'';
 $.ajax({ // ajax call starts
     url: url, // JQuery loads serverside.php 
@@ -45,18 +45,19 @@ $.ajax({ // ajax call starts
     crossDomain: true,
     success: function (data) // Variable data contains the data we get from serverside
     {
-        datosg = data;
-        if (data.NomConsumidor != null) {
+        alert('sucess');
+        //        datosg = data;
+        //        if (data.NomConsumidor != null) {
 
-            $('#coreeventos').empty();
-            $.mobile.changePage("#menu");
+        //            $('#coreeventos').empty();
+        //            $.mobile.changePage("#menu");
 
-            isAuth = true;          
+        //            isAuth = true;          
 
-        }
-        else {
-            alert("El usuario o la clave no son validos");
-        }
+        //        }
+        //        else {
+        //            alert("El usuario o la clave no son validos");
+        //        }
     },
     error: function (data) {
         alert("Los campos no pueden estar en blanco" + data.responseText);
