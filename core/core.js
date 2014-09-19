@@ -58,7 +58,7 @@ $.ajax({ // ajax call starts
         }
     },
     error: function (data) {
-        alert("Los campos no pueden estar en blanco");
+        alert("Los campos no pueden estar en blanco" + data);
     }
 });
 	    
