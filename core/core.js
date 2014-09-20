@@ -677,5 +677,23 @@ function ListarHistorico(dataHistorico) {
 
             $("#verHistorico").append(crearItem);      
      };
-}
+    }
+
+    //calendar
+
+    function getCalendar(elm, param) {
+        var minVal = 0;
+        var maxVal = 0;
+        if (param === "min") {
+            minVal = new Date("January 1, 2013");
+        }
+        if (param === "max") {
+            maxVal = new Date("December 31, 2015");
+        }
+        if (param === "both") {
+            minVal = new Date("January 1, 2013");
+            maxVal = new Date("December 31, 2015");
+        }
+        app.handleDates(elm, { min: minVal, max: maxVal });
+    }
 
