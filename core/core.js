@@ -497,7 +497,7 @@ function GuardarReserva() {
     var fechaReservaTemp = new Date(fechaReserva);
     
     // Validar Rango de Fecha Reservada
-    var fechaReserva = fechaReservaTemp.getFullYear() + '' + ("0" + (fechaReservaTemp.getMonth() + 1)).slice(-2) + '' + ("0" + (fechaReservaTemp.getDate() + 1)).slice(-2);
+    var fechaReserva = fechaReservaTemp.getFullYear() + '' + ("0" + (fechaReservaTemp.getMonth() + 1)).slice(-2) + '' + ("0" + (fechaReservaTemp.getDate() )).slice(-2);
 
     var fechaIni = ExtraerFecha(fechasReservasValidas.RanIniDisConsumo);
     var fechaFin = ExtraerFecha(fechasReservasValidas.RanFinDisConsumo);
@@ -556,12 +556,14 @@ function GuardarReserva() {
 
 
 function ExtraerHora(horaconver) {
+
+    var horavl = horaconver.getHours() + horaconver.getMinutes() + "00";
     //sacar hora
-    var dathoras = horaconver.split(":");
-    var segini = dathoras[2];
-    var minini = dathoras[1];
-    var hini = dathoras[0].substring(13, 11);
-    var horavl = hini + minini + segini;
+//    var dathoras = horaconver.split(":");
+//    var segini = dathoras[2];
+//    var minini = dathoras[1];
+//    var hini = dathoras[0].substring(13, 11);
+//    var horavl = hini + minini + segini;
     
     return horavl;
 }
@@ -599,7 +601,7 @@ function ComparFechasVersion2(fechaActual, fechaIni, fechaFin) {
 
 function ExtraerHoraVersion2(horaconver) {
     //sacar hora
-    var dathoras = horaconver.split(":");
+    var dathoras = horaconver.getMinutes;
     var hora = dathoras[0];
     var min = dathoras[1];
 
@@ -627,5 +629,53 @@ function generarQR() {
     $("#QRImage").attr("src", QRImage);
 
     $.mobile.changePage("#mostrarQR");
+}
+
+
+function Historico() { 
+
+    var url = siteCustomer + '/Reserva/FilterH/?nit=999999999&codServicio=SRV002&cedConsumidor=713999';
+    $.ajax({ // ajax call starts
+        url: url, // JQuery loads serverside.php 
+        type: "GET",
+        dataType: 'json', // Choosing a JSON datatype
+        timeout: 5000,
+        crossDomain: true,
+        success: function (data) // Variable data contains the data we get from serverside
+        {        
+            ListarHistorico(data);
+        },
+        error: function (data) {
+            alert("Error en la conexión");
+        }
+    });
+
+    $.mobile.changePage("#historico");
+}
+
+function ListarHistorico(dataHistorico) {
+
+    var numRows = 0;
+
+    var crearItem = '<tr>' +
+            '<th>Fecha</th>' +
+            '<th>Hora</th>' +
+            '<th>Descripción</th>' +           
+            '</tr>';
+
+    $("#verHistorico").append(crearItem);      
+
+    while (numRows < dataHistorico.length) {
+
+        var crearItem = '<tr>' +
+            '<th>' + getDateString(dataHistorico[numRows].FecReserva) + '</th>' +
+            '<th>' + getHourString(dataHistorico[numRows].FecReserva) + '</th>' +
+            '<th>' + dataHistorico[numRows].DesProducto + '</th>' +            
+            '</tr>';
+
+            numRows += 1;
+
+            $("#verHistorico").append(crearItem);      
+     };
 }
 

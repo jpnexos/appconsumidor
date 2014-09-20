@@ -207,7 +207,7 @@
 	<br>
     <div data-role="content">	
 	Seleccionar Fecha:
-	<input type="datetime" id="fechaReserva" />
+	<input type="datetime-local" id="fechaReserva" />
     
 	<p id="DesProducto"></p>    
 	<button id = "vcedu"  onclick="GuardarReserva();" class="ui-btn-text">Confirmar</button>
@@ -225,6 +225,18 @@
       	<div id="Div2" align="center" style="width:100%">
             <img id="QRImage" src="" />
         </div>	    						
+	</div>	 
+</div>
+
+<!-- Historico-->
+<div data-role="page" id="historico" class="contenido">
+	<div data-role="content">			
+		<div class="logo" align="center"></div>
+		<br><br><br>
+        <div align="center">
+      	<table id="verHistorico" class="ui-responsive" style="background-color:White; width:90%">        
+        </table>
+        </div>						
 	</div>	 
 </div>
 
