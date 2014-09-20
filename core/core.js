@@ -680,14 +680,7 @@ function ListarHistorico(dataHistorico) {
     }
 
     //calendar
-
     function getCalendar() {
-        var options = {
-            date: new Date(),
-            mode: 'date'
-        };
-
-        datePicker.show(options, function (date) {
-            alert("date result " + date);
-        });
-    };
+  
+    }
+   
