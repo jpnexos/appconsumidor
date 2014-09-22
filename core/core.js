@@ -453,10 +453,10 @@ function verMenus(CedConsumidor, CodServicio, RanFinDisConsumo, RanFinDisServici
 
     var isValid = ComparFechasVersion2(fechaActual, fechaIni, fechaFin);
 
-    if (!isValid) {
-        alert('La reserva solo se puede realizar entre el ' + getDateString(RanFinDisServicio) + ' y el' + getDateString(RanIniDisServicio));
-        return false;
-    }   
+//    if (!isValid) {
+//        alert('La reserva solo se puede realizar entre el ' + getDateString(RanFinDisServicio) + ' y el' + getDateString(RanIniDisServicio));
+//        return false;
+//    }   
 
     fechasReservasValidas = {
         RanFinDisConsumo: RanFinDisConsumo,
@@ -486,7 +486,7 @@ function verMenus(CedConsumidor, CodServicio, RanFinDisConsumo, RanFinDisServici
 function GuardarReserva() {
 
     // Validar Fecha Reserva Ingresada
-    var fechaReserva = $("#fechaReserva").val();
+    var fechaReserva = $("#date3").val();
     //var horaReserva = $("#horaReserva").val();
 
     if (fechaReserva == "" ) {
@@ -679,8 +679,3 @@ function ListarHistorico(dataHistorico) {
      };
     }
 
-    //calendar
-    function getCalendar() {
-  
-    }
-   
