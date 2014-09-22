@@ -60,7 +60,7 @@ $.ajax({ // ajax call starts
                 }
     },
     error: function (data) {
-        alert("Los campos no pueden estar en blanco" + data.responseText);
+        alert("Los campos no pueden estar en blanco");
     }
 });
 	    
@@ -431,7 +431,7 @@ function Servicios() {
                 '</li>' +
                 '<br>';
 
-            $("#ServiciosDisponibles").append(crearItem);
+            $("#serviciosDisponiblesList").append(crearItem);
         }  
 
         numRows  += 1;
