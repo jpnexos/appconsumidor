@@ -68,7 +68,8 @@ $.ajax({ // ajax call starts
 
 
 function ListarComidas(data){
- var i=0;
+    var i = 0;
+    $("#coreeventos").empty();
 
  while (i < data.length) {     
 
@@ -98,7 +99,9 @@ function ListarComidas(data){
 }
 
 function ListarEventos(data){
- var i=0;
+    var i = 0;
+   
+
 	 while (i < data.Derechos.length){
 		 NameServicio=data.Derechos[i].DesServicio;
 		 codigoservicio=data.Derechos[i].CodServicio;
@@ -405,6 +408,7 @@ function ConfirmarReserva(NitProveedor, CedConsumidor, CodServicio, CodProducto,
 
 function Servicios() {
     var numRows = 0;
+    $("#serviciosDisponiblesList").empty();
 
     while (numRows < datosg.Derechos.length) {
 
@@ -448,10 +452,10 @@ function verMenus(CedConsumidor, CodServicio, RanFinDisConsumo, RanFinDisServici
 
     var isValid = ComparFechasVersion2(fechaActual, fechaIni, fechaFin);
 
-    if (!isValid) {
-        alert('La reserva solo se puede realizar entre el ' + getDateString(RanFinDisServicio) + ' y el' + getDateString(RanIniDisServicio));
-        return false;
-    }   
+//    if (!isValid) {
+//        alert('La reserva solo se puede realizar entre el ' + getDateString(RanFinDisServicio) + ' y el' + getDateString(RanIniDisServicio));
+//        return false;
+//    }   
 
     fechasReservasValidas = {
         RanFinDisConsumo: RanFinDisConsumo,
@@ -651,6 +655,7 @@ function Historico() {
 function ListarHistorico(dataHistorico) {
 
     var numRows = 0;
+    $("#verHistorico").empty();
 
     var crearItem = '<tr>' +
             '<th>Fecha</th>' +
