@@ -163,21 +163,7 @@
             });
         }
 
-    </script>
-    <script>    
-        Modernizr.load({
-        test: Modernizr.inputtypes.date,
-        nope: ['jquery-ui.js',
-                'jquery-ui.theme.css',
-                'jquery-ui.css'],
-        complete: function () {
-            $('input[type=date]').datepicker({
-                dateFormat: 'dd/mm/yy'
-            });
-        }
-    });
-    </script>
-
+    </script>   
 
 </head>
 <body> 
@@ -193,10 +179,7 @@
      			<input type="password" id="clave" name="clave" value="nexos1" >
 				<br>
       			<input type="submit" value="Login" id="botonLogin" onclick="ValidarLogin();">   
-                <!-- <div data-role="fieldcontain">
-                    <label for="date3">Datetime</label>
-                    <input type="text" name="date3" id="date3" class="mobiscroll" />
-                </div>-->
+               
 	</div>	 
 </div>
 <!-- menu3 control de acceso-->
@@ -357,7 +340,7 @@
 	<br>
 	<button id = "vcedu"  onclick="Historico();" class="ui-btn-text">Historial</button>
     <br>
-	<button id = "GenerarQR"  onclick="generarQR();" class="ui-btn-text">Generar QR</button><!-- TODO:  generar QR-->
+	<button id = "GenerarQR"  onclick="generarQR();" class="ui-btn-text">Generar QR</button>
 	</div>
 	</div>	
 </div>
@@ -380,8 +363,7 @@
 	<div data-role="content">	
 	<br>
     <div data-role="content">	
-	Seleccionar Fecha:
-	<!--<input type="date" id="fechaReserva" />-->
+	Seleccionar Fecha:	
     <input type="text" name="date3" id="date3" class="mobiscroll" />
     
 	<p id="DesProducto"></p>    

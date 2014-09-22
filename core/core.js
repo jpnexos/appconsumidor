@@ -439,11 +439,6 @@ function Servicios() {
 
 function verMenus(CedConsumidor, CodServicio, RanFinDisConsumo, RanFinDisServicio, RanIniDisConsumo, RanIniDisServicio, CanAsignada) {
 
-//    if (CanAsignada >= 1) {
-//        alert('La reserva ya fue asignada');
-//        return false;
-//    }
-
     //Se válida la fecha
     var fechaSistema = new Date();
     var fechaActual = fechaSistema.getFullYear() + '' + ("0" + (fechaSistema.getMonth() + 1)).slice(-2) + '' + fechaSistema.getDate();
@@ -453,10 +448,10 @@ function verMenus(CedConsumidor, CodServicio, RanFinDisConsumo, RanFinDisServici
 
     var isValid = ComparFechasVersion2(fechaActual, fechaIni, fechaFin);
 
-//    if (!isValid) {
-//        alert('La reserva solo se puede realizar entre el ' + getDateString(RanFinDisServicio) + ' y el' + getDateString(RanIniDisServicio));
-//        return false;
-//    }   
+    if (!isValid) {
+        alert('La reserva solo se puede realizar entre el ' + getDateString(RanFinDisServicio) + ' y el' + getDateString(RanIniDisServicio));
+        return false;
+    }   
 
     fechasReservasValidas = {
         RanFinDisConsumo: RanFinDisConsumo,
